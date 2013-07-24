@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 
-class Plase(models.Model):
+class Place(models.Model):
     title = models.CharField(max_length=128, verbose_name=u"Заголовок")
     #images = models.ImageField(upload_to="images/plases", verbose_name=u"Картинка")
     VISIT = 'VISIT'

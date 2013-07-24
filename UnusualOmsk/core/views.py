@@ -4,21 +4,23 @@ from django.template import Context, loader
 from django.shortcuts import render
 from django.http import Http404
 
-from core.models import Plase
+from core.models import Place
 
 
 def index(request):
-    all_plases = Plase.objects.all()
+    all_places = Place.objects.all()
     template = loader.get_template('index.html')
     context = Context({
-        'all_plases': all_plases,
+        'all_places': all_places,
     })
     return HttpResponse(template.render(context))
 
 
-def plase(request, plase_id):
+def place(request, place_id):
     try:
-        one_plase = Plase.objects.get(id=plase_id)
-    except Plase.DoesNotExist:
+        one_place = Place.objects.get(id=place_id)
+    except Place.DoesNotExist:
         raise Http404
-    return render(request, 'plase.html', {'plase': one_plase})
+    return render(request, 'place.html', {'place': one_place})
+
+    

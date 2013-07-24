@@ -4,7 +4,7 @@ from core import views
 
 urlpatterns = patterns('',
 	url(r'^$', views.index, name='index'),
-	url(r'^plase/(?P<plase_id>\d+)/$', views.plase, name='plase'),
-	url(r'^plase/(?P<plase_id>\d+)$', views.plase, name='plase'),
-	url(r'^plase/', views.index, name='index'),
+	url(r'^place/(?P<place_id>\d+)/$', views.place, name='plase'),
+	url(r'^place/(?P<place_id>\d+)$', views.place, name='plase'),
+	url(r'^place/', views.index, name='index'),
 )

@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 
 {% block content %}
-    {% for plase in all_plases %}
-        <a href="{% url 'plase' plase.id %}"><p>{{ plase.title }}</p></a>
+    {% for place in all_places %}
+        <a href="{% url 'plase' place.id %}"><p>{{ place.title }}</p></a>
     {% endfor %}
 {% endblock %}

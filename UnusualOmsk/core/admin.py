@@ -1,4 +1,4 @@
 from django.contrib import admin
-from core.models import Plase
+from core.models import Place
 
-admin.site.register(Plase)
+admin.site.register(Place)
