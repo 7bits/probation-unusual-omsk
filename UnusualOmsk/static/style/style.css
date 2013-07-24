@@ -1,0 +1,90 @@
+header {
+	margin: 0 auto;
+	width: 725px;
+	height: 215px;
+}
+
+div {
+	background-color: grey;
+}
+
+#logo {
+	height: 215px;
+	width: 225px;
+	float: left;
+	//margin-right: 25px;
+}
+
+#header-map {
+	height: 145px;
+	width: 475px;
+	float: right;
+}
+	
+#content {
+	background-color: rgb(220,220,220);
+	//height: 687px;
+	height: 1000px;
+	width: 725px;
+	margin: 36px auto 0px;
+}
+
+#login {
+	height: 36px;
+	width: 100px;
+	float: right;
+	background-color: rgb(220,0,220);
+}
+
+footer {
+	position: fixed;
+	height: 18px;
+	width: 725px;
+	bottom: 3px;
+	background-color: rgb(0,0,100);	
+	left: 50%;
+	margin-left: -363px;
+}
+
+.search {
+	height: 18px;
+	background-color: rgb(200,200,200);
+	margin-bottom: 36px;
+	
+}
+
+.search #category,#area,#rating {
+	width: 100px;
+	height: 18px;
+	float: left;
+	margin-right: 25px;
+}
+
+.search #search-field {
+	width: 225px;
+	height: 18px;
+	float: left;
+	margin-right: 25px;
+	
+}
+
+.search #search-button {
+	width: 100px;
+	height: 18px;
+	float: left;
+}
+
+select {
+	height: 18px;
+	width: 100px;
+}
+
+button {
+	height: 18px;
+	width: 100px;
+}
+
+input {
+	height: 18px;
+	width: 225px;
+}
