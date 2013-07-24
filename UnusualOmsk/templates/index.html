@@ -1,0 +1,7 @@
+{% extends "main.html" %}
+
+{% block content %}
+    {% for plase in all_plases %}
+        <a href="{% url 'plase' plase.id %}"><p>{{ plase.title }}</p></a>
+    {% endfor %}
+{% endblock %}
