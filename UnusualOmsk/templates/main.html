@@ -10,49 +10,16 @@
 </head>
 
 <body>
+
 <header>
 	<div id="logo"></div>
-	<div id="header-map">
-			<div id="login"></div>
-	</div>
+			<div id="login">Вход</div>
 </header>
-	<nav class="search">
-		<form><div id="category">
-		<select>
-			<option selected>Категория</option>
-			<option>Посмотреть</option>
-			<option>Посидеть</option>
-			<option>Посетить</option>	
-		</select>
-		</div>
-		<div id="area">
-		<select>
-			<option selected>Район</option>
-			<option>Центральный</option>
-			<option>Кировский</option>
-			<option>Ленинский</option>
-			<option>Советский</option>
-			<option>Октябрьский</option>
-		</select>
-		</div>
-		<div id="rating">
-		<select>
-			<option selected>Рейтинг</option>
-			<option>5 звёзд</option>
-			<option>4 звезды</option>
-			<option>3 звезды</option>
-		</select>
-		</div>
-		<div id="search-field">
-		<input type="text">
-		</div>
-		<div id="search-button">
-		<button>Поиск</button>
-		</div>
-	</nav>
-    {% block content %}
-    {% endblock %}
+{% block content %}
+{% endblock %}
+
 <footer>
+О проекте
 </footer>
 
 </body>

@@ -6,9 +6,8 @@ from django.http import Http404
 
 from core.models import Place
 
-
 def index(request):
-    all_places = Place.objects.all()
+    all_places = zip(*[iter(Place.objects.all())] * 3)
     template = loader.get_template('index.html')
     context = Context({
         'all_places': all_places,
@@ -23,4 +22,4 @@ def place(request, place_id):
         raise Http404
     return render(request, 'place.html', {'place': one_place})
 
-    
+#<a href="{% url 'place' place.id %}"><p>{{ place.title }}</p></a>

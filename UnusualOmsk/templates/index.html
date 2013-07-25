@@ -1,7 +1,32 @@
 {% extends "main.html" %}
 
+
 {% block content %}
-    {% for place in all_places %}
-        <a href="{% url 'plase' place.id %}"><p>{{ place.title }}</p></a>
-    {% endfor %}
+<div id="content">
+	<div class="places">
+    {% for place1, place2, place3 in all_places %}
+		<div class="place">
+			<div class="photo" style="background: url({{ place1.image.url }})">
+			</div>
+			<div class="info">
+			{{ place1.title }}
+			</div>
+		</div>
+		<div class="place">
+			<div class="info">
+			{{ place2.title }}
+			</div>
+			<div class="photo" style="background: url({{ place2.image.url }})">
+			</div>
+		</div>
+		<div class="place">
+			<div class="photo" style="background: url({{ place3.image.url }})">
+			</div>
+			<div class="info">
+			{{ place3.title }}
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+</div>
 {% endblock %}
