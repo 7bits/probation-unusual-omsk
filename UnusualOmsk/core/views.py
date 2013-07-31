@@ -21,5 +21,3 @@ def place(request, place_id):
     except Place.DoesNotExist:
         raise Http404
     return render(request, 'place.html', {'place': one_place})
-
-#<a href="{% url 'place' place.id %}"><p>{{ place.title }}</p></a>

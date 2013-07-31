@@ -17,7 +17,6 @@ class Place(models.Model):
     address = models.CharField(max_length=128, verbose_name=u"Адрес")
     description = models.TextField(verbose_name=u"Описание")
     pub_date = models.DateTimeField(auto_now_add=True, verbose_name=u"Дата/время")
-    
 
     def __unicode__(self):
         return unicode(self.title)
