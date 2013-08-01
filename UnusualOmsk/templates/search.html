@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+
+{% block content %}
+    {% for place1 in places %}
+		<div class="place">
+			<div class="photo" style="background: url({{ place1.image.url }})">
+			</div>
+			<div class="info">
+			{{ place1.title }}
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}
