@@ -1,127 +1,100 @@
 header {
-	margin: 0 auto;
+	margin: 34px auto;
 	width: 725px;
-	height: 250px;
+	height: 215px;
 }
 
-div {
-	//background-color: grey;
+body{
+	width: 975px;
+	margin: auto;
+	background: url("background.png");
+	background-attachment: fixed;
+	background-position: center top;
+    background-repeat: no-repeat; 
 }
 
-#logo {
-	height: 250px;
-	width: 225px;
+
+/**
+@section header
+*/
+.logo {
+	height: 217px;
+	width: 187px;
 	float: left;
-	background: url("/static/logo.png");
-	background-size: cover;
-	//margin-right: 25px;
-}
-	
-#content {
-	background-color: rgba(220,220,220,0);
-	//height: 687px;
-	height: 1000px;
-	width: 725px;
-	margin: 36px auto 0px;
+	background: url("logo.png");
 }
 
-#login {
-	height: 36px;
-	width: 100px;
+.header-map {
+	height: 161px;
+	width: 480px;
 	float: right;
-	//background-color: rgb(220,0,220);
-	text-align: center;
-	vertical-align: middle;
+	//background: url("header-map.png");
+	background: rgba(180,217,242,0.5);
+	padding-top: 55px;
+	padding-left: 20px;
+	color: white;
+	font: 20px bolt;
 }
-
-footer {
-	position: fixed;
+/**
+@section search
+*/
+.search {
 	height: 18px;
 	width: 725px;
-	bottom: 3px;
-	background-color: rgba(126,126,127,0.5);	
-	left: 50%;
-	margin-left: -363px;
+	margin: auto;
+	margin-top: 36px;
 }
 
-nav {
+.search #category,#area,#rating {
+	width: 100px;
 	height: 18px;
-	//background-color: rgb(200,200,200);
-	margin-bottom: 36px;
+	float: left;
+	margin-right: 25px;
+	display: none;
+}
+
+#search-form{
+	float: right;
+}
+#search-button{
+	width: 100px;
+	height: 18px;
+	font: 12px bold;
+	vertical-align: top;
+	background-color: rgb(250,235,194);
+}
+#search-field{
+	width: 225px;
+	height: 18px;
+	margin-right: 20px;
+	vertical-align: top;
+	background-color: rgb(250,235,194);
+}
+
+/**
+@section content
+*/
+a{
+	text-decoration: none;
+	color: black;
+}
+#content {
 	width: 725px;
 	margin: 36px auto 0px;
 }
-
-nav #category,#area,#rating {
-	width: 100px;
-	height: 18px;
-	float: left;
-	margin-right: 25px;
-}
-
-nav #search-field {
-	width: 225px;
-	height: 18px;
-	float: left;
-	margin-right: 25px;
-	
-}
-
-nav #search-button {
-	width: 100px;
-	height: 18px;
-	float: left;
-}
-
-select {
-	height: 18px;
-	width: 100px;
-}
-
-button {
-	height: 18px;
-	width: 100px;
-	font-size: 10px;
-	vertical-align: top;
-}
-
-input {
-	vertical-align: top;
-	height: 12px;
-	width: 225px;
-	font-size: 10px;
-}
-
 .place:nth-child(3n-2) {
-	//background-color: rgb(100,0,0);
 	margin-top: 0px;
 }
-
-.place:nth-child(1) {
-	//background-color: rgb(100,0,0);
-	margin-top: 0px;
-}
-
-
 .place:nth-child(3n - 1) {
-	//background-color: rgb(255,0,0);
 	margin-top: 36px;
 }
-
-.place:nth-child(2) {
-	//background-color: rgb(255,0,0);
-	margin-top: 36px;
+.place:nth-child(3n - 1) .photo {
+	Position: relative; top: 54px;
 }
-
-
+.place:nth-child(3n - 1) .info {
+	Position: relative; bottom: 216px;
+}
 .place:nth-child(3n) {
-	//background-color: rgb(255,0,100);
-	margin-top: 0px;
-	margin-right: 0px;
-}
-
-.place:nth-child(3) {
-	//background-color: rgb(255,0,100);
 	margin-top: 0px;
 	margin-right: 0px;
 }
@@ -139,23 +112,57 @@ input {
 	text-align: center;
 	background-size: cover !important;
 }
-img {
-	max-height: 216px;
-	max-width: 225px;
-	padding: 0;
-	margin: 0;
-}
-
 .info {
 	display: table-cell;
 	vertical-align: middle;
 	height: 54px;
 	width: 225px;
 	text-align: center;
-	background-color: rgb(211,212,213);
+	background-color: rgb(250,235,194);
 }
 
-/*.place:nth-child(1) .photo{
-	background-image: url("http://puu.sh/3Lhea.jpg");
-	background-size: cover;
-}*/
+
+/**
+@section footer
+*/
+footer {
+	position: fixed;
+	height: 18px;
+	width: 851px;
+	bottom: 3px;
+	background-color: rgba(66,65,62,0.5);	
+	left: 50%;
+	margin-left: -363px;
+}
+
+#content {
+	width: 725px;
+	margin: 36px auto 0px;
+}
+.place_img{
+	float: left;
+	height: 380px;
+	width: 350px;
+	background-size: cover !important;
+}
+.place_img img{
+	float: left;
+	height: 380px;
+	width: 350px;
+}
+.place_map{
+	float: right;
+	height: 380px;
+	width: 350px;
+}
+.place_about{
+	background-color: rgba(250,235,194,0.7);
+	display: inline-block;
+	margin-top: 10px;
+	padding-right: 15px;
+	padding-left: 15px;
+	width: 696px;
+}
+p.address{
+	margin-bottom: 0px;
+}
