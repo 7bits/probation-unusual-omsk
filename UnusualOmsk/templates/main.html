@@ -27,7 +27,6 @@
 		<div class="subscription">
 			Рассылка новостей
 			<form action="/subscribe/" method="post" id="subscription-form">
-				{% csrf_token %}
 				<input type="email" name="email" value="e-mail" id="subscription-field" />
 				<input type="submit" value="Подписаться" id="subscription-button" />	
 			</form>
