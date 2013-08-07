@@ -4,12 +4,13 @@ header {
 	height: 215px;
 }
 
-body{
+body {
 	width: 975px;
 	margin: auto;
 	background: url("background.png");
+	background-size: cover !important;
 	background-attachment: fixed;
-	background-position: center top;
+	//background-position: right top;
     background-repeat: no-repeat; 
 }
 
@@ -24,16 +25,51 @@ body{
 	background: url("logo.png");
 }
 
-.header-map {
-	height: 161px;
-	width: 480px;
+.header-info {
 	float: right;
-	//background: url("header-map.png");
-	background: rgba(180,217,242,0.5);
-	padding-top: 55px;
-	padding-left: 20px;
-	color: white;
-	font: 20px bolt;
+	width: 480px;
+	//background: url("header-quote.png");
+
+}
+
+.header-quote {
+	height: 100px;
+	margin-top: 36px;
+	background: rgba(250,235,194,1);
+	padding-left: 24px;
+	padding-bottom: 6px;
+	padding-top: 3px;
+	color: black;
+	//font: 18px bold;
+}
+
+/**
+@section subscription
+*/
+.subscription {
+	margin-top: 18px;
+	background: rgba(250,235,194,0.5);
+	height: 54px;
+	font-size: 15px;
+	line-height: 51px;
+	padding-left: 28px;
+	padding-right: 20px;
+}
+
+#subscription-form {
+	float: right;
+}
+
+#subscription-field {
+	text-align: center;
+	vertical-align: middle;
+	border: 0px;
+}
+
+#subscription-button {
+	background-color: rgb(250,235,194);
+	vertical-align: middle;
+	border: 0px;
 }
 /**
 @section search

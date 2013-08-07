@@ -9,7 +9,8 @@ from django.db.models import Q
 from core.models import Place
 
 def index(request):
-    all_places = zip(*[iter(Place.objects.all())] * 3)
+    #all_places = zip(*[iter(Place.objects.all())] * 3)
+    all_places = Place.objects.all()
     template = loader.get_template('index.html')
     context = Context({
         'all_places': all_places,

@@ -1,12 +1,12 @@
 {% extends "main.html" %}
 
 {% block content %}
-    {% for place1 in places %}
+    {% for place in places %}
 		<div class="place">
-			<div class="photo" style="background: url({{ place1.image.url }})">
+			<div class="photo" style="background: url({{ place.image.url }})">
 			</div>
 			<div class="info">
-			{{ place1.title }}
+				<a href="/place/{{ place.id }}">{{ place.title }}</a>
 			</div>
 		</div>
 	{% endfor %}
