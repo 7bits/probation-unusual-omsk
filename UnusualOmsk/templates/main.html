@@ -3,17 +3,15 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   	<title>Необычный омск</title>
   	{% load staticfiles %}
   	<link rel="stylesheet" type="text/css" href="{% static "style/style.css" %}" >
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
  	<script src="{% static "js/jqueryrotate.2.1.js" %}"></script>
   	<script src="{% static "js/rotate_logo.js" %}"></script>
-
-
-  	<!-- Put this script tag to the <head> of your page -->
-	<script type="text/javascript" src="//vk.com/js/api/openapi.js?98"></script>
+  	{% block script %}
+	{% endblock %}
 </head>
 
 <body>
@@ -27,7 +25,7 @@
 		<div class="subscription">
 			Рассылка новостей
 			<form action="/subscribe/" method="post" id="subscription-form">
-				<input type="email" name="email" value="e-mail" id="subscription-field" />
+				<input type="email" name="email" placeholder="введите свой e-mail" id="subscription-field" />
 				<input type="submit" value="Подписаться" id="subscription-button" />	
 			</form>
 		</div>
@@ -35,6 +33,9 @@
 </header>
 
 <nav class="search">
+	<a href="/map/">
+		<div class="button_map">карта</div>
+	</a>
 	<div id="category">
 		<select>
 			<option selected>Категория</option>
@@ -62,8 +63,8 @@
 		</select>
 	</div>
 	<form action="/search/" method="get" id="search-form">
-		<input type="search" name="search_text" id="search-field" />
-		<input type="submit" value="Поиск" id="search-button" />	
+		<input type="search" name="search_text" id="search-field" placeholder="введите слово для поиска"/>
+		<input type="submit" value="найти" id="search-button" />	
 	</form>
 </nav>
 
@@ -72,7 +73,7 @@
 	{% endblock %}
 </section>
 <footer>
-О проекте
+	<a href="/about">О проекте</a>
 </footer>
 
 </body>

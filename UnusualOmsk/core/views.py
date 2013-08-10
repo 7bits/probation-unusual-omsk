@@ -36,3 +36,14 @@ def search_place(request):
     else:
         search_text = ''
     return render_to_response('search.html', {'places': places})
+
+def placesMap(request):
+    all_places = Place.objects.all()
+    template = loader.get_template('map.html')
+    context = Context({
+        'all_places': all_places,
+    })
+    return HttpResponse(template.render(context))
+
+def about(request):
+    return render_to_response('about.html')

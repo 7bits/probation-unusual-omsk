@@ -74,6 +74,15 @@ body {
 /**
 @section search
 */
+.button_map{
+	float: left;
+	width: 100px;
+	height: 18px;
+	text-align: center;
+	font: 12px bold;
+	background: rgb(250,235,194)
+}
+
 .search {
 	height: 18px;
 	width: 725px;
@@ -98,13 +107,16 @@ body {
 	font: 12px bold;
 	vertical-align: top;
 	background-color: rgb(250,235,194);
+	border: 0px;
 }
 #search-field{
 	width: 225px;
 	height: 18px;
 	margin-right: 20px;
 	vertical-align: top;
+	text-align: center;
 	background-color: rgb(250,235,194);
+	border: 0px;
 }
 
 /**
@@ -116,16 +128,23 @@ a{
 }
 #content {
 	width: 725px;
-	margin: 36px auto 0px;
+	margin: 36px auto 30px;
 }
 .place:nth-child(3n-2) {
 	margin-top: 0px;
 }
+
+.place:nth-child(3n-2) .photo {
+	margin-top: 0px;
+	margin: 9px 9px 0px 12px;
+}
+
 .place:nth-child(3n - 1) {
 	margin-top: 36px;
 }
 .place:nth-child(3n - 1) .photo {
 	Position: relative; top: 54px;
+	margin: 0px 9px 9px 12px;
 }
 .place:nth-child(3n - 1) .info {
 	Position: relative; bottom: 216px;
@@ -135,16 +154,23 @@ a{
 	margin-right: 0px;
 }
 
+.place:nth-child(3n) .photo {
+	margin-top: 0px;
+	margin: 9px 9px 0px 12px;
+}
+
 .place {
 	height: 270px;
 	width: 225px;
 	float: left;
 	margin-right: 25px;
+	background-color: rgba(250,235,194,0.8);
 }
 
 .photo {
-	height: 216px;
-	width: 225px;
+	height: 207px;
+	width: 200px;
+	//margin: 0px 9px 0px 9px;
 	text-align: center;
 	background-size: cover !important;
 }
@@ -154,7 +180,6 @@ a{
 	height: 54px;
 	width: 225px;
 	text-align: center;
-	background-color: rgb(250,235,194);
 }
 
 
@@ -164,17 +189,17 @@ a{
 footer {
 	position: fixed;
 	height: 18px;
-	width: 851px;
+	width: 725px;
 	bottom: 3px;
 	background-color: rgba(66,65,62,0.5);	
 	left: 50%;
 	margin-left: -363px;
 }
 
-#content {
-	width: 725px;
-	margin: 36px auto 0px;
+footer > a {
+	color: rgb(250,235,194);
 }
+
 .place_img{
 	float: left;
 	height: 380px;
@@ -186,19 +211,78 @@ footer {
 	height: 380px;
 	width: 350px;
 }
-.place_map{
+#place_map{
 	float: right;
+	height: 200px;
+	width: 335px;
+}
+.place_wrapper{
 	height: 380px;
-	width: 350px;
+	padding: 10px;
+	background-color: rgb(250,235,194);
 }
 .place_about{
-	background-color: rgba(250,235,194,0.7);
-	display: inline-block;
-	margin-top: 10px;
-	padding-right: 15px;
-	padding-left: 15px;
-	width: 696px;
+	//background-color: rgb(250,235,194);
+	display: table-cell;
+	vertical-align: middle;
+	height: 150px;
+	padding-right: 30px;
+	padding-left: 30px;
+	width: 320px;
 }
 p.address{
 	margin-bottom: 0px;
+}
+
+.sidebar {
+	width: 225px;
+	height: 558px;
+	float: left;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: rgba(250,235,194,0.64);
+}
+
+.list_place {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	height: 72px;
+	width: 225px;
+}
+
+.list_place:hover {
+	background-color: rgba(67,65,62,0.2);
+}
+.sidebar > a:nth-child(1) > .list_place {
+	margin-top: 20px;
+}
+
+#map {
+	float: right;
+	margin-left: 25px;
+	width: 474px;
+	height: 558px;
+	background-color: rgba(250,235,194,0.64);
+}
+
+.about {
+	padding: 10px;
+	height: 600px;
+	width: 705px;
+	background-color: rgba(250,235,194,0.8);
+}
+.about_image {
+	width: 725px;
+	height:110px;
+	position: absolute;
+	top: 833px;
+	left: 322px;
+	background: url("about_bottom.png");
+	background-repeat: no-repeat;
+}
+
+.img_map{
+	max-width: 200px;
+	max-height: 200px;
 }
