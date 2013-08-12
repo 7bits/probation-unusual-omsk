@@ -1,0 +1,4 @@
+*.pyc
+env/
+static/images_places/
+*.sqlite

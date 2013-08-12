@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+    {% for place in all_places %}
+		<div class="place">
+		<a href="/place/{{ place.id }}">
+			<div class="photo" style="background: url({{ place.image.url }})"></div>
+			<div class="info">{{ place.title }}</div>
+		</a>
+		</div>
+	{% endfor %}
+{% endblock %}

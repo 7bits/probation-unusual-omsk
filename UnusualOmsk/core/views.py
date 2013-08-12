@@ -6,7 +6,7 @@ from django.core.context_processors import csrf
 import operator
 from django.db.models import Q
 
-from core.models import Place
+from UnusualOmsk.core.models import Place
 
 def index(request):
     #all_places = zip(*[iter(Place.objects.all())] * 3)

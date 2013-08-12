@@ -1,0 +1,61 @@
+{% extends "main.html" %}
+
+
+{% block script %}
+	<script src="//api-maps.yandex.ru/2.0.31/?load=package.standard,package.geoQuery&lang=ru-RU" type="text/javascript"></script>
+	<script type="text/javascript">
+	ymaps.ready(init);
+	
+	function init () {
+	    var map = new ymaps.Map('place_map', {
+	            center: [{{ place.latitude }}, {{ place.longitude}}],
+	            zoom: 16
+	        }),
+	        // Создание макета содержимого балуна.
+	        // Макет создается с помощью фабрики макетов с помощью текстового шаблона.
+	        BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+	            '<div style="margin: 10px;">' +
+	                '<b>$[properties.name]</b><br />' +
+	                '<img class="img_map" src="$[properties.img]"/><br /> ' +
+	                '<b>$[properties.address]</b>' +
+	            '</div>'
+	        );	
+	    map.geoObjects.add(new ymaps.Placemark([{{ place.latitude }}, {{ place.longitude}}], {
+	            name: '{{ place.title }}',
+	            img: '{{ place.image.url }}',
+	        address: '{{ place.address }}'
+	        }, {
+	            balloonContentLayout: BalloonContentLayout
+	        }));
+
+    }
+	</script>
+{% endblock %}
+
+{% block content %}
+<div class="place_wrapper">
+	<div class="place_img" style="background: url({{ place.image.url }})">
+	</div>
+	<div class="place_about">
+		{{ place.description }}
+		<p class="address">Адрес: {{ place.address }}
+	</div>
+	<div id="place_map">
+	</div>
+</div>
+
+	<script type="text/javascript">
+	  VK.init({apiId: API_ID, onlyWidgets: true});
+	</script>
+	<!-- Put this div tag to the place, where the Comments block will be -->
+	<div id="vk_comments"></div>
+	<script type="text/javascript">
+	VK.Widgets.Comments("vk_comments", {limit: 10, width: "725", attach: "*"});
+	</script>
+{% endblock %}
+
+
+
+
+
+

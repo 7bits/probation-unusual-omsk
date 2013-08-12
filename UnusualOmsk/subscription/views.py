@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Create your views here.
-from subscription.models import SubscriptionMail, SubscriptionForm
+from UnusualOmsk.subscription.models import SubscriptionMail, SubscriptionForm
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render_to_response
 
