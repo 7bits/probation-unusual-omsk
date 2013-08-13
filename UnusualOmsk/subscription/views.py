@@ -16,4 +16,5 @@ def subscription_add(request):
         else:
             message_response = u"Вы ввели некоректный e-mail"
     return render_to_response('subscription.html',
-        {'message_response': message_response})
+        {'message_response': message_response,
+        'subscription_form': subscription_form})
