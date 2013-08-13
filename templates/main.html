@@ -26,7 +26,9 @@
 		<div class="subscription">
 			Рассылка новостей
 			<form action="/subscribe/" method="post" id="subscription-form">
-				<input type="email" name="email" placeholder="введите свой e-mail" id="subscription-field" />
+				{% for field in subscription_form %}
+					{{ field }}
+				{% endfor %}
 				<input type="submit" value="Подписаться" id="subscription-button" />	
 			</form>
 		</div>
