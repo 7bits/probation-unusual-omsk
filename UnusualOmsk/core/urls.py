@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, url
-
+from django.views.generic import TemplateView
 from UnusualOmsk.core import views
 
 urlpatterns = patterns('',
@@ -8,5 +8,5 @@ urlpatterns = patterns('',
     url(r'^place/', views.index, name='index'),
     url(r'^search/$', views.search_place, name='search'),
     url(r'^map/$', views.placesMap, name='map'),
-    url(r'^about/$', views.about, name='about'),
+    url(r'^about/$', TemplateView.as_view(template_name='about.html')),
 )
