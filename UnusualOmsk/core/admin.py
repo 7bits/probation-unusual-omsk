@@ -1,5 +1,4 @@
 from django.contrib import admin
-from UnusualOmsk.core.models import Place
+from UnusualOmsk.core.models import place
 
-admin.site.register(Place)
-#admin.site.register(PlaceImage)
+admin.site.register(place)

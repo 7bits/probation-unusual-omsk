@@ -1,5 +1,4 @@
 from django.contrib import admin
-from UnusualOmsk.subscription.models import SubscriptionMail
+from UnusualOmsk.subscription.models import subscription_mail
 
-admin.site.register(SubscriptionMail)
-#admin.site.register(PlaceImage)
+admin.site.register(subscription_mail)

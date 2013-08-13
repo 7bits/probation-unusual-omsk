@@ -4,7 +4,7 @@ from django import forms
 # Create your models here.
 
 
-class Place(models.Model):
+class place(models.Model):
     title = models.CharField(max_length=128, verbose_name=u"Заголовок")
     image = models.ImageField(upload_to="./", verbose_name=u"Картинка")
     GRAFFITI = 'GRAFFITI'
@@ -17,7 +17,7 @@ class Place(models.Model):
         (MONUMENTS, 'Памятники'),
         (ARCHITECTURE, 'Архитектура'),
     )
-    catagory = models.CharField(max_length=12,
+    category = models.CharField(max_length=12,
         choices=CATEGORY_CHOICES, verbose_name=u"Категория")
     address = models.CharField(max_length=128, verbose_name=u"Адрес")
     latitude = models.CharField(max_length=9, verbose_name=u"Широта")

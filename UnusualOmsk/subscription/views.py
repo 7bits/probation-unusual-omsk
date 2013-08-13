@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 # Create your views here.
-from UnusualOmsk.subscription.models import SubscriptionMail
-from UnusualOmsk.subscription.forms import SubscriptionForm
+from UnusualOmsk.subscription.models import subscription_mail
+from UnusualOmsk.subscription.forms import subscription_form
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render_to_response
 
 
 @csrf_exempt
-def SubscriptionAdd(request):
+def subscription_add(request):
     if request.POST:
-        form = SubscriptionForm(request.POST)
+        form = subscription_form(request.POST)
         if form.is_valid():
             form.save()
             message_response = u"Вы успешно подписались"

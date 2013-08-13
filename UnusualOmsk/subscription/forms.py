@@ -1,6 +1,6 @@
 from django.forms import ModelForm
-from UnusualOmsk.subscription.models import SubscriptionMail
+from UnusualOmsk.subscription.models import subscription_mail
 
-class SubscriptionForm(ModelForm):
+class subscription_form(ModelForm):
     class Meta:
-        model = SubscriptionMail
+        model = subscription_mail
