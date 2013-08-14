@@ -1,6 +1,5 @@
 # Create your views here.
-from django.shortcuts import render, render_to_response
-from django.core.context_processors import csrf
+from django.shortcuts import render
 import operator
 from django.db.models import Q
 from street_faces.core.models import place
@@ -30,7 +29,7 @@ def search_place(request):
             Q(title__icontains=search_word) for search_word in search_text)))
     else:
         search_text = ''
-    return render_to_response('search.html', {
+    return render(request, 'search.html', {
         'places': places,
         'subscription_form': subscription_form})
 
