@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
-from UnusualOmsk.core import views
+from street_faces.core import views
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),

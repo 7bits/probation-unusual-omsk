@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#subscription-form').submit(function(e) {
         e.preventDefault();
         $.ajax({
-            url: "subscribe/",
+            url: "/subscribe/",
             type: "POST",
             dataType: "json",
             data: $(this).serialize(), 
@@ -19,9 +19,6 @@ $(document).ready(function() {
                     //$form.replaceWith(data['response']);
                     alert("не правильный e-mail!");
                 }
-            },
-            error: function(){
-                alert("failure");
             },
         });
     });

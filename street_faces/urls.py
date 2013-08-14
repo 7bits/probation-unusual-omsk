@@ -9,16 +9,16 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'UnusualOmsk.views.home', name='home'),
-    # url(r'^UnusualOmsk/', include('UnusualOmsk.foo.urls')),
+    # url(r'^$', 'street_faces.views.home', name='home'),
+    # url(r'^street_faces/', include('street_faces.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('UnusualOmsk.core.urls')),
-    url(r'^', include('UnusualOmsk.subscription.urls')),
+    url(r'^', include('street_faces.core.urls')),
+    url(r'^', include('street_faces.subscription.urls')),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -3,9 +3,9 @@ from django.shortcuts import render, render_to_response
 from django.core.context_processors import csrf
 import operator
 from django.db.models import Q
-from UnusualOmsk.core.models import place
+from street_faces.core.models import place
 from django.shortcuts import get_object_or_404
-from UnusualOmsk.subscription.forms import subscription_form
+from street_faces.subscription.forms import subscription_form
 
 
 def index(request):

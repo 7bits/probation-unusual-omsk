@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.forms import ModelForm
 from django import forms
-from UnusualOmsk.subscription.models import subscription_mail
+from street_faces.subscription.models import subscription_mail
 
 class subscription_form(ModelForm):
     class Meta:

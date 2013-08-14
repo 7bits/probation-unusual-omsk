@@ -15,7 +15,7 @@ DATABASES = {
         # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'ENGINE': 'django.db.backends.sqlite3',
         # Or path to database file if using sqlite3.
-        'NAME': 'UnusualOmsk.sqlite',
+        'NAME': 'street_faces.sqlite',
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -112,10 +112,10 @@ MIDDLEWARE_CLASSES = (
     #'django.middleware.csrf.CsrfResponseMiddleware',
 )
 
-ROOT_URLCONF = 'UnusualOmsk.urls'
+ROOT_URLCONF = 'street_faces.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'UnusualOmsk.wsgi.application'
+WSGI_APPLICATION = 'street_faces.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates')
@@ -132,8 +132,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'UnusualOmsk.core',
-    'UnusualOmsk.subscription',
+    'street_faces.core',
+    'street_faces.subscription',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

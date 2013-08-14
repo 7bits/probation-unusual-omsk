@@ -1,4 +1,4 @@
 from django.contrib import admin
-from UnusualOmsk.core.models import place
+from street_faces.core.models import place
 
 admin.site.register(place)

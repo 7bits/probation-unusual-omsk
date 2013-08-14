@@ -1,0 +1,4 @@
+python 2.7
+python-dev
+PIL
+django 1.5

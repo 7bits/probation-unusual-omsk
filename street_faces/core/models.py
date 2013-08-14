@@ -17,8 +17,7 @@ class place(models.Model):
         (MONUMENTS, 'Памятники'),
         (ARCHITECTURE, 'Архитектура'),
     )
-    # изменить на category
-    catagory = models.CharField(max_length=12,
+    category = models.CharField(max_length=12,
         choices=CATEGORY_CHOICES, verbose_name=u"Категория")
     address = models.CharField(max_length=128, verbose_name=u"Адрес")
     latitude = models.CharField(max_length=9, verbose_name=u"Широта")

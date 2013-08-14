@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Create your views here.
-from UnusualOmsk.subscription.models import subscription_mail
-from UnusualOmsk.subscription.forms import subscription_form
+from street_faces.subscription.models import subscription_mail
+from street_faces.subscription.forms import subscription_form
 from django.views.decorators.csrf import csrf_exempt
 from django.http import Http404, HttpResponse
 from django.utils import simplejson
