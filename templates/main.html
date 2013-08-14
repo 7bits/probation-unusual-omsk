@@ -5,13 +5,14 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  	<title>Необычный омск</title>
-  	
-  	<link rel="stylesheet" type="text/css" href="{% static "style/style.css" %}" >
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
- 	<script src="{% static "js/jqueryrotate.2.1.js" %}"></script>
-  	<script src="{% static "js/rotate_logo.js" %}"></script>
-  	{% block script %}
+	<title>Street Faces</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static "style/style.css" %}" >
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+	<script src="{% static "js/jqueryrotate.2.1.js" %}"></script>
+	<script src="{% static "js/rotate_logo.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/subscription.js" %}"></script>
+	{% block script %}
 	{% endblock %}
 </head>
 
@@ -25,7 +26,7 @@
 		</div>
 		<div class="subscription">
 			Рассылка новостей
-			<form action="/subscribe/" method="post" id="subscription-form">
+			<form action="" method="post" id="subscription-form">{% csrf_token %}
 				{% for field in subscription_form %}
 					{{ field }}
 				{% endfor %}
