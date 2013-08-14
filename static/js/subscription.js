@@ -17,7 +17,7 @@ $(document).ready(function() {
                 else if (data['result'] == 'error') {
                     // Показываем ошибки
                     //$form.replaceWith(data['response']);
-                    alert("не правильный e-mail!");
+                    alert("Неправильный e-mail!");
                 }
             },
         });
