@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import Http404, HttpResponse
 from django.utils import simplejson
 
+
 @csrf_exempt
 def subscription_add(request):
     if request.method == 'POST':
