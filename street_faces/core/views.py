@@ -1,6 +1,5 @@
 # Create your views here.
 from django.shortcuts import render
-from django.core.context_processors import csrf
 import operator
 from django.db.models import Q
 from street_faces.core.models import place
