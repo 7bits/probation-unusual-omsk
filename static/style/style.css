@@ -203,6 +203,7 @@ h2 {
 #search-field{
 	margin-right: 20px;
 	height: 23px;
+	width: 190px;
 	text-align: center;
 	border-style: solid;
 	border-width: 1px;
@@ -370,7 +371,9 @@ p.address{
 	float: left;
 	overflow-x: hidden;
 	overflow-y: auto;
-	background-color: rgba(250,235,194,0.64);
+	background-color: rgb(255,255,255);
+	box-shadow: 1px 4px 15px -4px;
+	border-radius: 3px;
 }
 
 .list_place {
@@ -382,7 +385,11 @@ p.address{
 }
 
 .list_place:hover {
-	background-color: rgba(67,65,62,0.2);
+	background: -moz-linear-gradient(top, #ffffff 0%,#d0d0d0 100%));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#999999 100%);
+    background: -o-linear-gradient(top, #93c8fd 0%,#4d4667 100%));
+    background: -ms-linear-gradient(top, #93c8fd 0%,#4d4667 100%);
+    background: linear-gradient(top, #ffffff 0%,#4d4667 100%);
 }
 .sidebar > a:nth-child(1) > .list_place {
 	margin-top: 20px;
