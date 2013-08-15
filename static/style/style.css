@@ -349,7 +349,9 @@ footer {
 .place_wrapper{
 	height: 380px;
 	padding: 10px;
-	background-color: rgb(250,235,194);
+	background-color: rgb(255,255,255);
+	box-shadow: 1px 4px 15px -4px;
+	border-radius: 3px;
 }
 .place_about{
 	//background-color: rgb(250,235,194);
@@ -385,11 +387,11 @@ p.address{
 }
 
 .list_place:hover {
-	background: -moz-linear-gradient(top, #ffffff 0%,#d0d0d0 100%));
+	background: -moz-linear-gradient(top, #ffffff 0%,#999999 100%);
     background: -webkit-linear-gradient(top, #ffffff 0%,#999999 100%);
-    background: -o-linear-gradient(top, #93c8fd 0%,#4d4667 100%));
-    background: -ms-linear-gradient(top, #93c8fd 0%,#4d4667 100%);
-    background: linear-gradient(top, #ffffff 0%,#4d4667 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#999999 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#999999 100%);
+    background: linear-gradient(top, #ffffff 0%,#999999 100%);
 }
 .sidebar > a:nth-child(1) > .list_place {
 	margin-top: 20px;
@@ -422,4 +424,29 @@ p.address{
 .img_map{
 	max-width: 200px;
 	max-height: 200px;
+}
+
+#tab-1 {
+
+	font-family: 'PT Sans', sans-serif !important;
+}
+
+#tab-2 {
+	height: 323px;
+	width: 335px;
+	padding: 0;
+}
+
+#tabs {
+	float: right;
+	width: 334px;
+}
+
+.ui-widget-header {
+	background: -moz-linear-gradient(top, #ffffff 0%,#999999 100%) !important;
+    background: -webkit-linear-gradient(top, #ffffff 0%,#999999 100%) !important;
+    background: -o-linear-gradient(top, #ffffff 0%,#999999 100%) !important;
+    background: -ms-linear-gradient(top, #ffffff 0%,#999999 100%) !important;
+    background: linear-gradient(top, #ffffff 0%,#999999 100%) !important;
+    border: 0 !important;
 }
