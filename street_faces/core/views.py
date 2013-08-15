@@ -3,7 +3,7 @@ from django.shortcuts import render
 import operator
 from django.db.models import Q
 from street_faces.core.models import place
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, get_list_or_404
 from street_faces.subscription.forms import subscription_form
 
 
@@ -44,7 +44,7 @@ def places_map(request):
         'subscription_form': subscription_form})
 
 def places_filter(request, filter_id):
-    one_place = get_object_or_404(place, category=filter_id)
-    return render(request, 'place.html', {
-        'place': one_place,
+    all_places = get_list_or_404(place, category=filter_id)
+    return render(request, 'index.html', {
+        'all_places': all_places,
         'subscription_form': subscription_form})
