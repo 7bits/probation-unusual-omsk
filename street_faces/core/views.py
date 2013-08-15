@@ -32,8 +32,8 @@ def search_place(request):
     else:
         places = place.objects.filter(reduce(operator.or_, (
                 Q(title__icontains=search_word) for search_word in search_text)))
-    return render(request, 'search.html', {
-        'places': places,
+    return render(request, 'index.html', {
+        'all_places': places,
         'subscription_form': subscription_form})
 
 
