@@ -8,14 +8,16 @@ class place(models.Model):
     title = models.CharField(max_length=128, verbose_name=u"Заголовок")
     image = models.ImageField(upload_to="./", verbose_name=u"Картинка")
     GRAFFITI = 'GRAFFITI'
-    INTERIOR = 'LOOK'
+    INTERIOR = 'INTERIOR'
     MONUMENTS = 'MONUMENTS'
     ARCHITECTURE = 'ARCHITECTURE'
+    FOUNTAINS = 'FOUNTAINS'
     CATEGORY_CHOICES = (
         (GRAFFITI, 'Граффити'),
         (INTERIOR, 'Интерьер'),
         (MONUMENTS, 'Памятники'),
         (ARCHITECTURE, 'Архитектура'),
+        (FOUNTAINS, 'Фонтаны'),
     )
     category = models.CharField(max_length=12,
         choices=CATEGORY_CHOICES, verbose_name=u"Категория")
