@@ -25,10 +25,13 @@ def search_place(request):
     if 'search_text' in request.GET and request.GET['search_text']:
         search_text = request.GET['search_text']
         search_text = search_text.split()
-        places = place.objects.filter(reduce(operator.or_, (
-            Q(title__icontains=search_word) for search_word in search_text)))
     else:
         search_text = ''
+    if search_text == '':
+        places = place.objects.all()
+    else:
+        places = place.objects.filter(reduce(operator.or_, (
+                Q(title__icontains=search_word) for search_word in search_text)))
     return render(request, 'search.html', {
         'places': places,
         'subscription_form': subscription_form})
