@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-	jQuery(".logo").rotate({
+	jQuery(".round-button").rotate({
 		bind:{
 			mouseover : function() {
 				$(this).rotate({animateTo:180})

@@ -9,4 +9,6 @@ urlpatterns = patterns('',
     url(r'^search/$', views.search_place, name='search'),
     url(r'^map/$', views.places_map, name='map'),
     url(r'^about/$', TemplateView.as_view(template_name='about.html')),
+    url(r'^filter/(?P<filter_id>[-_\w]+)/$', views.places_filter, name='place'),
+    url(r'^map/filter/(?P<filter_id>[-_\w]+)/$', views.places_filter_map, name='place'),
 )
