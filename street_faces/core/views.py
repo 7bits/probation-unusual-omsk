@@ -48,14 +48,14 @@ def places_map(request):
 
 
 def places_filter(request, filter_id):
-    all_places = get_list_or_404(place, category=filter_id)
+    all_places = place.objects.filter(category=filter_id)
     return render(request, 'index.html', {
         'all_places': all_places,
         'subscription_form': subscription_form})
 
 
 def places_filter_map(request, filter_id):
-    all_places = get_list_or_404(place, category=filter_id)
+    all_places = place.objects.filter(place, category=filter_id)
     return render(request, 'map.html', {
         'all_places': all_places,
         'subscription_form': subscription_form})
