@@ -2,7 +2,7 @@
 from django.shortcuts import render
 import operator
 from django.db.models import Q
-from street_faces.core.models import place, place_no_moderator
+from street_faces.core.models import place, place_unchecked
 from django.shortcuts import get_object_or_404, get_list_or_404
 from street_faces.subscription.forms import subscription_form
 from street_faces.core.forms import add_place_form
