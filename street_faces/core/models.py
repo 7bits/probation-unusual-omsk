@@ -30,3 +30,6 @@ class place(models.Model):
 
     def __unicode__(self):
         return unicode(self.title)
+
+class place_no_moderator(place):
+    pass

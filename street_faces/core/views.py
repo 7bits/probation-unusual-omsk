@@ -2,9 +2,12 @@
 from django.shortcuts import render
 import operator
 from django.db.models import Q
-from street_faces.core.models import place
+from street_faces.core.models import place, place_no_moderator
 from django.shortcuts import get_object_or_404, get_list_or_404
 from street_faces.subscription.forms import subscription_form
+from street_faces.core.forms import add_place_form
+from django.http import Http404
+from django.views.decorators.csrf import csrf_exempt
 
 
 def index(request):
@@ -43,14 +46,29 @@ def places_map(request):
         'all_places': all_places,
         'subscription_form': subscription_form})
 
+
 def places_filter(request, filter_id):
     all_places = get_list_or_404(place, category=filter_id)
     return render(request, 'index.html', {
         'all_places': all_places,
         'subscription_form': subscription_form})
 
+
 def places_filter_map(request, filter_id):
     all_places = get_list_or_404(place, category=filter_id)
     return render(request, 'map.html', {
         'all_places': all_places,
         'subscription_form': subscription_form})
+
+
+@csrf_exempt
+def add_place(request):
+    if request.method == 'POST':
+        form = add_place_form(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+        else:
+            raise Http404
+    return render(request, 'add-place.html', {
+        'add_place_form': add_place_form,
+        'subscription_form': subscription_form}})

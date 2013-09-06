@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^about/$', TemplateView.as_view(template_name='about.html')),
     url(r'^filter/(?P<filter_id>[-_\w]+)/$', views.places_filter, name='place'),
     url(r'^map/filter/(?P<filter_id>[-_\w]+)/$', views.places_filter_map, name='place'),
+    url(r'^add-place/$', views.add_place, name='add plcae'),
 )
