@@ -71,4 +71,4 @@ def add_place(request):
             raise Http404
     return render(request, 'add-place.html', {
         'add_place_form': add_place_form,
-        'subscription_form': subscription_form}})
+        'subscription_form': subscription_form})
