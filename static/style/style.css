@@ -352,6 +352,7 @@ footer {
 	background-color: rgb(255,255,255);
 	box-shadow: 1px 4px 15px -4px;
 	border-radius: 3px;
+	margin-bottom: 10px;
 }
 .place_about{
 	//background-color: rgb(250,235,194);
