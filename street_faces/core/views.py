@@ -2,7 +2,7 @@
 from django.shortcuts import render
 import operator
 from django.db.models import Q
-from street_faces.core.models import place, place_unchecked
+from street_faces.core.models import place_checked, place_unchecked
 from django.shortcuts import get_object_or_404, get_list_or_404
 from street_faces.subscription.forms import subscription_form
 from street_faces.core.forms import add_place_form
@@ -11,14 +11,14 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 def index(request):
-    all_places = place.objects.all()
+    all_places = place_checked.objects.all()
     return render(request, 'index.html', {
         'all_places': all_places,
         'subscription_form': subscription_form})
 
 
 def place_one(request, place_id):
-    one_place = get_object_or_404(place, id=place_id)
+    one_place = get_object_or_404(place_checked, id=place_id)
     return render(request, 'place.html', {
         'place': one_place,
         'subscription_form': subscription_form})
@@ -31,9 +31,9 @@ def search_place(request):
     else:
         search_text = ''
     if search_text == '':
-        places = place.objects.all()
+        places = place_checked.objects.all()
     else:
-        places = place.objects.filter(reduce(operator.or_, (
+        places = place_checked.objects.filter(reduce(operator.or_, (
                 Q(title__icontains=search_word) for search_word in search_text)))
     return render(request, 'index.html', {
         'all_places': places,
@@ -41,21 +41,22 @@ def search_place(request):
 
 
 def places_map(request):
-    all_places = place.objects.all()
+    all_places = place_checked.objects.all()
     return render(request, 'map.html', {
         'all_places': all_places,
         'subscription_form': subscription_form})
 
 
 def places_filter(request, filter_id):
-    all_places = place.objects.filter(category=filter_id)
+    print filter_id
+    all_places = place_checked.objects.filter(category__category=filter_id)
     return render(request, 'index.html', {
         'all_places': all_places,
         'subscription_form': subscription_form})
 
 
 def places_filter_map(request, filter_id):
-    all_places = place.objects.filter(place, category=filter_id)
+    all_places = place_checked.objects.filter(category__category=filter_id)
     return render(request, 'map.html', {
         'all_places': all_places,
         'subscription_form': subscription_form})
