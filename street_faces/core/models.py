@@ -18,20 +18,9 @@ class place(models.Model):
     latitude = models.CharField(max_length=9, verbose_name=u"Широта")
     longitude = models.CharField(max_length=9, verbose_name=u"Долгота")
     description = models.TextField(verbose_name=u"Описание")
+    is_visible = models.BooleanField(default=False, verbose_name=u"Опубликовано")
     pub_date = models.DateTimeField(auto_now_add=True,
         verbose_name=u"Дата/время")
 
     def __unicode__(self):
         return unicode(self.title)
-
-    class Meta:
-        abstract = True
-
-class place_unchecked(place):
-    class Meta:
-        verbose_name_plural = u"не добавленные места"
-
-
-class place_checked(place):
-    class Meta:
-        verbose_name_plural = u"добавленные места"

@@ -12,4 +12,7 @@ urlpatterns = patterns('',
     url(r'^filter/(?P<filter_id>[-_\w]+)/$', views.places_filter, name='place'),
     url(r'^map/filter/(?P<filter_id>[-_\w]+)/$', views.places_filter_map, name='place'),
     url(r'^add-place/$', views.add_place, name='add plcae'),
+    url(r'^moderation/$', views.moderation_list, name='moderation'),
+    url(r'^moderation/(?P<place_id>\d+)/$', views.moderation, name='place'),
+    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
 )
