@@ -14,15 +14,13 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     all_places = place.objects.filter(is_visible=True)
     return render(request, 'index.html', {
-        'all_places': all_places,
-        'subscription_form': subscription_form})
+        'all_places': all_places})
 
 
 def place_one(request, place_id):
     one_place = get_object_or_404(place, id=place_id, is_visible=True)
     return render(request, 'place.html', {
-        'place': one_place,
-        'subscription_form': subscription_form})
+        'place': one_place})
 
 
 def search_place(request):
@@ -37,29 +35,25 @@ def search_place(request):
         places = place.objects.filter(reduce(operator.or_, (
                 Q(title__icontains=search_word) for search_word in search_text)), is_visible=True)
     return render(request, 'index.html', {
-        'all_places': places,
-        'subscription_form': subscription_form})
+        'all_places': places})
 
 
 def places_map(request):
     all_places = place.objects.filter(is_visible=True)
     return render(request, 'map.html', {
-        'all_places': all_places,
-        'subscription_form': subscription_form})
+        'all_places': all_places})
 
 
 def places_filter(request, filter_id):
     all_places = place.objects.filter(category__category=filter_id, is_visible=True)
     return render(request, 'index.html', {
-        'all_places': all_places,
-        'subscription_form': subscription_form})
+        'all_places': all_places})
 
 
 def places_filter_map(request, filter_id):
     all_places = place.objects.filter(category__category=filter_id, is_visible=True)
     return render(request, 'map.html', {
-        'all_places': all_places,
-        'subscription_form': subscription_form})
+        'all_places': all_places})
 
 
 @csrf_exempt
@@ -71,17 +65,14 @@ def add_place(request):
         else:
             raise Http404
     return render(request, 'add-place.html', {
-        'add_place_form': add_place_form,
-        'subscription_form': subscription_form})
+        'add_place_form': add_place_form})
 
 
 @login_required
 def moderation_list(request):
     all_places = place.objects.all()
     return render(request, 'moderation.html', {
-        'all_places': all_places,
-        'subscription_form': subscription_form,
-        })
+        'all_places': all_places})
 
 
 @csrf_exempt

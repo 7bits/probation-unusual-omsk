@@ -67,7 +67,7 @@
 		<a href="/about/">О ПРОЕКТЕ</a>
 		<div class="subscription">
 			<form action="" method="post" id="subscription-form">{% csrf_token %}
-				{% for field in subscription_form %}
+				{% for field in request.subscription_form %}
 					{{ field }}
 				{% endfor %}
 				<input type="submit" value="подписаться" id="subscription-button" />	
