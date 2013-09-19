@@ -1,6 +1,9 @@
 {% extends "main.html" %}
 
+{% load staticfiles %}
+
 {% block script %}
+	<link rel="stylesheet" type="text/css" href="{% static "style/map.css" %}" >
 	<script src="//api-maps.yandex.ru/2.0.31/?load=package.standard,package.geoQuery&lang=ru-RU" type="text/javascript"></script>
 	<script type="text/javascript">
 	ymaps.ready(init);
@@ -35,7 +38,7 @@
 
 {% block content %}
 	<div class="sidebar">
-		{% for place in all-places %}
+		{% for place in all_places %}
 			<a href="/place/{{ place.id }}">
 				<div class="list-place">
 					{{ place.title }}
