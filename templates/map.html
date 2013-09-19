@@ -20,7 +20,7 @@
 	                '<b>$[properties.address]</b>' +
 	            '</div>'
 	        );
-	    {% for place in all-places %}		
+	    {% for place in all_places %}		
 		    map.geoObjects.add(new ymaps.Placemark([{{ place.latitude }}, {{ place.longitude}}], {
 		            name: '{{ place.title }}',
 		            img: '{{ place.image.url }}',

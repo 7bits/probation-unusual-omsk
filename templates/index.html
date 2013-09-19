@@ -5,12 +5,12 @@
 {% block content %}
 
 	<h1>Самые интересные места Омска</h1>
-    <div>{% for place in all-places %}
+    <div>{% for place in all_places %}
 		<div class="place">
 		<a href="/place/{{ place.id }}/">
 			<div class="photo" style="background: url({{ place.image.url }})"></div>
 			<div class="info">
-				<div class="place-title">{{ place.title }}</div><div class="place-address"><img src="{% static "images/place-icon.png" %}" >  {{ place.address }}</div></div>
+				<div class="place_title">{{ place.title }}</div><div class="place-address"><img src="{% static "images/place-icon.png" %}" >  {{ place.address }}</div></div>
 		</a>
 		</div>
 	{% endfor %}
