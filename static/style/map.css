@@ -1,0 +1,37 @@
+.sidebar {
+	width: 225px;
+	height: 558px;
+	float: left;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: rgb(255,255,255);
+	box-shadow: 1px 4px 15px -4px;
+	border-radius: 3px;
+}
+
+.list-place {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	height: 72px;
+	width: 225px;
+}
+
+.list-place:hover {
+	background: -moz-linear-gradient(top, #ffffff 0%,#999999 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%,#999999 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#999999 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#999999 100%);
+    background: linear-gradient(top, #ffffff 0%,#999999 100%);
+}
+.sidebar > a:nth-child(1) > .list-place {
+	margin-top: 20px;
+}
+
+#map {
+	float: right;
+	margin-left: 25px;
+	width: 474px;
+	height: 558px;
+	background-color: rgba(250,235,194,0.64);
+}

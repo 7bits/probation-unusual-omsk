@@ -1,0 +1,15 @@
+.about {
+	padding: 10px;
+	height: 600px;
+	width: 705px;
+	background-color: rgba(250,235,194,0.8);
+}
+.about-image {
+	width: 725px;
+	height:110px;
+	position: absolute;
+	top: 833px;
+	left: 322px;
+	background: url("../images/about-bottom.png");
+	background-repeat: no-repeat;
+}

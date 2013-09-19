@@ -1,0 +1,70 @@
+.place-img{
+	float: left;
+	height: 380px;
+	width: 350px;
+	background-size: cover !important;
+}
+.place-img img{
+	float: left;
+	height: 380px;
+	width: 350px;
+}
+#place-map{
+	float: right;
+	height: 200px;
+	width: 335px;
+}
+.place-wrapper{
+	height: 380px;
+	padding: 10px;
+	background-color: rgb(255,255,255);
+	box-shadow: 1px 4px 15px -4px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+.place-about{
+	//background-color: rgb(250,235,194);
+	display: table-cell;
+	vertical-align: middle;
+	height: 150px;
+	padding-right: 30px;
+	padding-left: 30px;
+	width: 320px;
+}
+
+p.address{
+	margin-bottom: 0px;
+}
+
+
+
+
+.img-map{
+	max-width: 200px;
+	max-height: 200px;
+}
+
+#tab-1 {
+
+	font-family: 'PT Sans', sans-serif !important;
+}
+
+#tab-2 {
+	height: 323px;
+	width: 335px;
+	padding: 0;
+}
+
+#tabs {
+	float: right;
+	width: 334px;
+}
+
+.ui-widget-header {
+	background: -moz-linear-gradient(top, #ffffff 0%,#999999 100%) !important;
+    background: -webkit-linear-gradient(top, #ffffff 0%,#999999 100%) !important;
+    background: -o-linear-gradient(top, #ffffff 0%,#999999 100%) !important;
+    background: -ms-linear-gradient(top, #ffffff 0%,#999999 100%) !important;
+    background: linear-gradient(top, #ffffff 0%,#999999 100%) !important;
+    border: 0 !important;
+}

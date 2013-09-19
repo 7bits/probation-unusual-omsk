@@ -1,0 +1,62 @@
+.place-title {
+	font-family: 'PT Sans Bold', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 2px 11px;
+}
+
+.place:nth-child(3n-2) {
+	margin-top: 0px;
+}
+
+.place:nth-child(3n-2) .photo {
+	margin-top: 0px;
+	margin: 9px 9px 0px 12px;
+}
+
+.place:nth-child(3n - 1) {
+	margin-top: 36px;
+}
+.place:nth-child(3n - 1) .photo {
+	Position: relative; top: 54px;
+	margin: 0px 9px 9px 12px;
+}
+.place:nth-child(3n - 1) .info {
+	Position: relative; bottom: 216px;
+}
+.place:nth-child(3n) {
+	margin-top: 0px;
+	margin-right: 0px;
+}
+
+.place:nth-child(3n) .photo {
+	margin-top: 0px;
+	margin: 9px 9px 0px 12px;
+}
+
+.place {
+	height: 270px;
+	width: 225px;
+	float: left;
+	margin-right: 25px;
+	border-radius: 4px;
+	box-shadow: 1px 4px 15px -4px;
+	background-color: rgb(255, 255, 255);
+	font-family: 'PT Sans', sans-serif;
+}
+
+.photo {
+	height: 207px;
+	width: 200px;
+	//margin: 0px 9px 0px 9px;
+	text-align: center;
+	background-size: cover !important;
+}
+.info {
+	display: table-cell;
+	vertical-align: middle;
+	height: 54px;
+	width: 225px;
+	text-align: center;
+	font-size: 10px;
+}

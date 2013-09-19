@@ -1,0 +1,247 @@
+header {
+	margin: auto 0px;
+}
+
+body {
+	margin: auto;
+	background-color: rgb(249, 249, 249);
+}
+
+a {
+	font-family: 'PT Sans', sans-serif;
+	text-decoration: none;
+	color: black;
+}
+
+/**
+@section content
+*/
+
+#content {
+	width: 725px;
+	margin: 36px auto 30px;
+	overflow: hidden;
+	padding: 7px;
+}
+
+h1 {
+	font-family: 'PT Sans Bold', sans-serif;
+}
+
+/**
+@section header
+*/
+
+header a {
+	float: left;
+	line-height: 36px;
+	margin-right: 25px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	color: rgb(113,130,140);
+	text-decoration: underline;
+}
+
+.round-button {
+	position: relative;
+	height: 200px;
+	width: 200px;
+	left: 43%;
+	overflow: hidden;
+	float: left;
+	background: url("../images/round-button.png");
+	background-size: cover;
+}
+
+.phrase {
+	margin: 0 auto;
+	width: 268px;
+	height: 38px;
+	background: url("../images/phrase.png");
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+
+.header-top {
+	margin: 5px auto;
+	width: 53vw;
+	//height: 6vh;
+	min-width: 636px;
+	min-height: 36px;
+
+	overflow: hidden;
+}
+
+.logo {
+	float: left;
+}
+
+.links {
+	float: right;
+}
+
+.social {
+	float: right;
+}
+
+.vk-icon {
+	background: url("../images/vk-icon.png");
+	height: 36px;
+	width: 36px;
+	float: left;
+	margin-right: 8px !important;
+}
+
+.twitter-icon {
+	background: url("../images/twitter-icon.png");
+	height: 36px;
+	width: 36px;
+	float: right;
+}
+
+.header-main {
+	background: url("../images/header-bg.png");
+	background-size: cover;
+	height: 60vh;
+	width: 100%;
+	min-height: 328px;
+}
+
+h2 {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 40px;
+	font-weight: normal;
+	color: rgb(255,255,255);
+	text-align: center;
+	padding-top: 20px;
+	margin-bottom: 5px;
+}
+
+/**
+@section subscription
+*/
+.subscription {
+	font-family: 'PT Sans', sans-serif;
+	height: 36px;
+	line-height: 36px;
+	min-width: 440px;
+}
+
+#subscription-form {
+	float: right;
+	line-height: 32px;
+}
+
+#id-email {
+	text-align: center;
+	height: 19px;
+	vertical-align: middle;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(65,99,117,0.9);
+	box-shadow: inset 4px 4px 6px -3px rgb(191,191,191);
+}
+
+#subscription-button {
+	background-color: rgb(250,235,194);
+	vertical-align: middle;
+	border-width: 0px;
+	border-radius: 3px;
+	height: 23px;
+	width: 100px;
+	border-color: rgb(65,99,117);
+	background: -moz-linear-gradient(top, #ffffff 0%,#d0d0d0 100%));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#d0d0d0 100%);
+    background: -o-linear-gradient(top, #93c8fd 0%,#4d4667 100%));
+    background: -ms-linear-gradient(top, #93c8fd 0%,#4d4667 100%);
+    background: linear-gradient(top, #93c8fd 0%,#4d4667 100%);
+    font-size: 12px;
+}
+/**
+@section search
+*/
+.button-map{
+	float: left;
+	width: 100px;
+	height: 18px;
+	text-align: center;
+	font: 12px bold;
+	background: rgb(250,235,194)
+}
+
+.search {
+	height: 18px;
+	width: 736px;
+	margin: auto;
+	margin-top: 36px;
+}
+
+.search #category,#area,#rating {
+	width: 100px;
+	height: 18px;
+	float: left;
+	margin-right: 25px;
+	display: none;
+}
+
+#search-form{
+	float: right;
+}
+
+#search-button{
+	width: 100px;
+	color: rgb(255,255,255);
+	border-width: 0px;
+	border-radius: 3px;
+	height: 23px;
+	background: -moz-linear-gradient(top, #93c8fd 0%,#4d4667 100%));
+    background: -webkit-linear-gradient(top, #93c8fd 0%,#4d4667 100%);
+    background: -o-linear-gradient(top, #93c8fd 0%,#4d4667 100%));
+    background: -ms-linear-gradient(top, #93c8fd 0%,#4d4667 100%);
+    background: linear-gradient(top, #93c8fd 0%,#4d4667 100%);
+}
+#search-field{
+	margin-right: 20px;
+	height: 23px;
+	width: 190px;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(191,191,191);
+	box-shadow: inset 4px 4px 6px -3px rgb(191,191,191);
+}
+
+.search a {
+	margin-right: 8px;
+	text-decoration: underline;
+	float: left;
+}
+
+/**
+@section footer
+*/
+footer {
+	background: url("../images/footer-bg.png");
+	background-size: cover;
+	height: 8vh;
+	width: 100%;
+	min-height: 40px;
+	overflow: hidden;
+}
+
+.footer-main {
+	margin: 5px auto;
+	padding: 5px;
+	width: 53vw;
+	//height: 6vh;
+	min-width: 729px;
+	min-height: 36px;
+}
+
+.footer-main > a {
+	color: rgb(249,249,249);
+	float: left;
+	line-height: 36px;
+	margin-right: 25px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	text-decoration: underline;
+}
