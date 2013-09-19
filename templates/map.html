@@ -16,11 +16,11 @@
 	        BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
 	            '<div style="margin: 10px;">' +
 	                '<b>$[properties.name]</b><br />' +
-	                '<img class="img_map" src="$[properties.img]"/><br /> ' +
+	                '<img class="img-map" src="$[properties.img]"/><br /> ' +
 	                '<b>$[properties.address]</b>' +
 	            '</div>'
 	        );
-	    {% for place in all_places %}		
+	    {% for place in all-places %}		
 		    map.geoObjects.add(new ymaps.Placemark([{{ place.latitude }}, {{ place.longitude}}], {
 		            name: '{{ place.title }}',
 		            img: '{{ place.image.url }}',
@@ -35,9 +35,9 @@
 
 {% block content %}
 	<div class="sidebar">
-		{% for place in all_places %}
+		{% for place in all-places %}
 			<a href="/place/{{ place.id }}">
-				<div class="list_place">
+				<div class="list-place">
 					{{ place.title }}
 				</div>
 			</a>
@@ -45,9 +45,3 @@
 	</div>
 	<div id="map"/>
 {% endblock %}
-
-
-
-
-
-

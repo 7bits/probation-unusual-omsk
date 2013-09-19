@@ -12,7 +12,7 @@
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
 	<script src="{% static "js/jqueryrotate.2.1.js" %}"></script>
-	<script src="{% static "js/rotate_logo.js" %}"></script>
+	<script src="{% static "js/rotate-logo.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/subscription.js" %}"></script>
 	<script type="text/javascript" src="//vk.com/js/api/openapi.js?98"></script>
 	{% block script %}
@@ -27,7 +27,7 @@
 			<a href="/map/">КАРТА ДОСТОПРИМЕЧАТЕЛЬНОСТЕЙ</a>
 			<a href="/about/">О ПРОЕКТЕ</a>
 			<div class="social">
-				<a class="vk-icon" href="http://vk.com/streetfaces_ru" title="Вконтакте"></a>
+				<a class="vk-icon" href="http://vk.com/streetfaces-ru" title="Вконтакте"></a>
 				<a class="twitter-icon" href="http://twitter.com/StreetfacesRu" title="Твиттер"></a>
 			</div>
 		</div>
@@ -49,7 +49,7 @@
 	<a href="/filter/MONUMENTS/">Памятники</a>
 	<a href="/filter/FOUNTAINS/">Фонтаны</a>
 	<form action="/search/" method="get" id="search-form">
-		<input type="search" name="search_text" id="search-field" placeholder="Введите слово для поиска"/>
+		<input type="search" name="search-text" id="search-field" placeholder="Введите слово для поиска"/>
 		<input type="submit" value="найти" id="search-button" />	
 	</form>
 </nav>
@@ -66,8 +66,8 @@
 		<a href="/map/">КАРТА ДОСТОПРИМЕЧАТЕЛЬНОСТЕЙ</a>
 		<a href="/about/">О ПРОЕКТЕ</a>
 		<div class="subscription">
-			<form action="" method="post" id="subscription-form">{% csrf_token %}
-				{% for field in request.subscription_form %}
+			<form action="" method="post" id="subscription-form">{% csrf-token %}
+				{% for field in request.subscription-form %}
 					{{ field }}
 				{% endfor %}
 				<input type="submit" value="подписаться" id="subscription-button" />	
@@ -99,7 +99,7 @@
     if (w.opera == "[object Opera]") {
         d.addEventListener("DOMContentLoaded", f, false);
     } else { f(); }
-})(document, window, "yandex_metrika_callbacks");
+})(document, window, "yandex-metrika-callbacks");
 </script>
 <noscript><div><img src="//mc.yandex.ru/watch/22242917" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->

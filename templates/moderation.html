@@ -5,15 +5,15 @@
 {% block content %}
 	<h1>Самые интересные места Омска</h1>
     <div>
-    {% for place in all_places %}
-		<div class="place_wrapper">
-			<div class="place_img" style="background: url({{ place.image.url }})"></div>
+    {% for place in all-places %}
+		<div class="place-wrapper">
+			<div class="place-img" style="background: url({{ place.image.url }})"></div>
 				<div>
 			    	<h1>{{ place.title }}</h1>
 			        {{ place.description }}
 			    </div>
 			<form action="/moderation/{{ place.id }}/" method="POST">
-				{% csrf_token %}
+				{% csrf-token %}
 				<input type="submit" name="hide" value="Скрыть"/>
 				<input type="submit" name="show" value="Показать"/>
 			</form>

@@ -4,8 +4,8 @@
 
 {% block content %}
 
-	<form enctype="multipart/form-data" action="/add-place/" method="POST">{% csrf_token %}
-   		{{ add_place_form.as_p }}
+	<form enctype="multipart/form-data" action="/add-place/" method="POST">{% csrf-token %}
+   		{{ add-place-form.as-p }}
 		<input type="submit" value="добавить"/>	
 	</form>
 

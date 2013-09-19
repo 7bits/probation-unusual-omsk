@@ -132,7 +132,7 @@ h2 {
 	line-height: 32px;
 }
 
-#id_email {
+#id-email {
 	text-align: center;
 	height: 19px;
 	vertical-align: middle;
@@ -160,7 +160,7 @@ h2 {
 /**
 @section search
 */
-.button_map{
+.button-map{
 	float: left;
 	width: 100px;
 	height: 18px;
@@ -330,23 +330,23 @@ footer {
 //	color: rgb(249,249,249);
 //}
 
-.place_img{
+.place-img{
 	float: left;
 	height: 380px;
 	width: 350px;
 	background-size: cover !important;
 }
-.place_img img{
+.place-img img{
 	float: left;
 	height: 380px;
 	width: 350px;
 }
-#place_map{
+#place-map{
 	float: right;
 	height: 200px;
 	width: 335px;
 }
-.place_wrapper{
+.place-wrapper{
 	height: 380px;
 	padding: 10px;
 	background-color: rgb(255,255,255);
@@ -354,7 +354,7 @@ footer {
 	border-radius: 3px;
 	margin-bottom: 10px;
 }
-.place_about{
+.place-about{
 	//background-color: rgb(250,235,194);
 	display: table-cell;
 	vertical-align: middle;
@@ -379,7 +379,7 @@ p.address{
 	border-radius: 3px;
 }
 
-.list_place {
+.list-place {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
@@ -387,14 +387,14 @@ p.address{
 	width: 225px;
 }
 
-.list_place:hover {
+.list-place:hover {
 	background: -moz-linear-gradient(top, #ffffff 0%,#999999 100%);
     background: -webkit-linear-gradient(top, #ffffff 0%,#999999 100%);
     background: -o-linear-gradient(top, #ffffff 0%,#999999 100%);
     background: -ms-linear-gradient(top, #ffffff 0%,#999999 100%);
     background: linear-gradient(top, #ffffff 0%,#999999 100%);
 }
-.sidebar > a:nth-child(1) > .list_place {
+.sidebar > a:nth-child(1) > .list-place {
 	margin-top: 20px;
 }
 
@@ -412,17 +412,17 @@ p.address{
 	width: 705px;
 	background-color: rgba(250,235,194,0.8);
 }
-.about_image {
+.about-image {
 	width: 725px;
 	height:110px;
 	position: absolute;
 	top: 833px;
 	left: 322px;
-	background: url("../images/about_bottom.png");
+	background: url("../images/about-bottom.png");
 	background-repeat: no-repeat;
 }
 
-.img_map{
+.img-map{
 	max-width: 200px;
 	max-height: 200px;
 }

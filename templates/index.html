@@ -5,7 +5,7 @@
 {% block content %}
 
 	<h1>Самые интересные места Омска</h1>
-    <div>{% for place in all_places %}
+    <div>{% for place in all-places %}
 		<div class="place">
 		<a href="/place/{{ place.id }}/">
 			<div class="photo" style="background: url({{ place.image.url }})"></div>

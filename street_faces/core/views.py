@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Create your views here.
 import operator
 from django.db.models import Q
@@ -7,7 +8,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.http import Http404
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 
 
 def index(request):
@@ -45,8 +46,12 @@ def places_map(request):
 
 def places_filter(request, filter_id):
     all_places = place.objects.filter(category__category=filter_id, is_visible=True)
-    return render(request, 'index.html', {
-        'all_places': all_places})
+    print request.META['HTTP_REFERER']
+    if request.META['HTTP_REFERER'].find('/map/') != -1:
+        return redirect('/map/filter/'+filter_id)
+    else:
+        return render(request, 'index.html', {
+            'all_places': all_places})
 
 
 def places_filter_map(request, filter_id):
@@ -61,19 +66,26 @@ def add_place(request):
         form = add_place_form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            #добавить сообщение
         else:
-            raise Http404
+            raise Http404 #добавить ошибку
     return render(request, 'add-place.html', {
         'add_place_form': add_place_form})
 
 
 @login_required
 def moderation_list(request):
-    all_places = place.objects.all()
-    return render(request, 'moderation.html', {
-        'all_places': all_places})
+    print request.user.get_group_permissions()
+    if request.user.has_perm('core.can_moderate'):
+        all_places = place.objects.filter(is_visible=False)
+        return render(request, 'moderation.html', {
+            'all_places': all_places})
+    else:
+        raise Http404 #добавить ошибку
+    
 
 
+@permission_required('core.can_moderate')
 @csrf_exempt
 def moderation(request, place_id):
     if request.method == 'POST':

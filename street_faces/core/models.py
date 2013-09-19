@@ -24,3 +24,8 @@ class place(models.Model):
 
     def __unicode__(self):
         return unicode(self.title)
+
+    class Meta:
+        permissions = (
+            ("can_moderate", "Может модерировать"),
+            )
