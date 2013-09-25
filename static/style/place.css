@@ -68,3 +68,13 @@ p.address{
     background: linear-gradient(top, #ffffff 0%,#999999 100%) !important;
     border: 0 !important;
 }
+
+#vk_like {
+	margin-bottom: 10px;
+}
+
+#vk_like2 {
+	float: right;
+	margin-top: -23px;
+	margin-right: 150px;
+}
