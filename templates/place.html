@@ -68,6 +68,12 @@ function init () {
 {% endblock %}
 
 {% block content %}
+<!-- Put this div tag to the place, where the Like block will be -->
+<div id="vk_like"></div>
+<script type="text/javascript">
+VK.Widgets.Like("vk_like", {type: "full"});
+</script>
+
 <div class="place-wrapper">
 	<div class="place-img" style="background: url({{ place.image.url }})"></div>
 	<div id="tabs">
@@ -77,10 +83,15 @@ function init () {
 	    </ul>
 	    <div id="tab-1">
 	    	<h1>{{ place.title }}</h1>
-	        {{ place.description }}
+	        {{ place.description }} 
 	    </div>
 	    <div id="tab-2"></div>
 	</div>
+	<!-- Put this div tag to the place, where the Like block will be -->
+			<div id="vk_like2"></div>
+			<script type="text/javascript">
+				VK.Widgets.Like("vk_like2", {type: "button"});
+			</script>
 </div>
 
 	<script type="text/javascript">
