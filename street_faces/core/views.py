@@ -9,12 +9,26 @@ from django.http import Http404
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required, permission_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+
+def paginator_place(place_list, page, number_of_places):
+    paginator = Paginator(place_list, number_of_places)
+    try:
+        places = paginator.page(page)
+    except PageNotAnInteger:
+        places = paginator.page(1)
+    except EmptyPage:
+        places = paginator.page(paginator.num_pages)
+    return places
 
 
 def index(request):
     all_places = place.objects.filter(is_visible=True)
+    page = request.GET.get('page')
+    places = paginator_place(all_places, page, 12)
     return render(request, 'index.html', {
-        'all_places': all_places})
+        'all_places': places})
 
 
 def place_one(request, place_id):
@@ -24,18 +38,21 @@ def place_one(request, place_id):
 
 
 def search_place(request):
-    if 'search_text' in request.GET and request.GET['search_text']:
-        search_text = request.GET['search_text']
-        search_text = search_text.split()
-    else:
-        search_text = ''
+    search_text = request.GET.get('search-text', '')
     if search_text == '':
         places = place.objects.filter(is_visible=True)
+        search_request = ''
     else:
+        search_request = 'search-text=' + search_text + '&'
+        search_text = search_text.split()
         places = place.objects.filter(reduce(operator.or_, (
-                Q(title__icontains=search_word) for search_word in search_text)), is_visible=True)
+                Q(title__icontains=search_word)
+                for search_word in search_text)), is_visible=True)
+    page = request.GET.get('page')
+    places = paginator_place(places, page, 12)
     return render(request, 'index.html', {
-        'all_places': places})
+        'all_places': places,
+        'search_request': search_request})
 
 
 def places_map(request):
@@ -45,17 +62,19 @@ def places_map(request):
 
 
 def places_filter(request, filter_id):
-    all_places = place.objects.filter(category__category=filter_id, is_visible=True)
-    print request.META['HTTP_REFERER']
     if request.META['HTTP_REFERER'].find('/map/') != -1:
-        return redirect('/map/filter/'+filter_id)
-    else:
-        return render(request, 'index.html', {
-            'all_places': all_places})
+        return redirect('/map/filter/' + filter_id)
+    all_places = place.objects.filter(category__category=filter_id,
+        is_visible=True)
+    page = request.GET.get('page')
+    places = paginator_place(all_places, page, 12)
+    return render(request, 'index.html', {
+        'all_places': places})
 
 
 def places_filter_map(request, filter_id):
-    all_places = place.objects.filter(category__category=filter_id, is_visible=True)
+    all_places = place.objects.filter(category__category=filter_id,
+        is_visible=True)
     return render(request, 'map.html', {
         'all_places': all_places})
 
@@ -68,21 +87,19 @@ def add_place(request):
             form.save()
             #добавить сообщение
         else:
-            raise Http404 #добавить ошибку
+            raise Http404  # добавить ошибку
     return render(request, 'add-place.html', {
         'add_place_form': add_place_form})
 
 
 @login_required
 def moderation_list(request):
-    print request.user.get_group_permissions()
     if request.user.has_perm('core.can_moderate'):
-        all_places = place.objects.filter(is_visible=False)
+        all_places = place.objects.all()
         return render(request, 'moderation.html', {
             'all_places': all_places})
     else:
-        raise Http404 #добавить ошибку
-    
+        raise Http404  # добавить ошибку
 
 
 @permission_required('core.can_moderate')

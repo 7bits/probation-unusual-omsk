@@ -17,5 +17,21 @@
 		</a>
 		</div>
 	{% endfor %}
+	<br>
+	<div class="pagination">
+	    <span class="step-links">
+	        {% if all_places.has_previous %}
+	            <a href="?{{ search_request }}page={{ all_places.previous_page_number }}">Назад</a>
+	        {% endif %}
+
+	        <span class="current">
+	            Страница {{ all_places.number }} из {{ all_places.paginator.num_pages }}.
+	        </span>
+
+	        {% if all_places.has_next %}
+	            <a href="?{{ search_request }}page={{ all_places.next_page_number }}">Вперед</a>
+	        {% endif %}
+	    </span>
+	</div>
 	</div>
 {% endblock %}
