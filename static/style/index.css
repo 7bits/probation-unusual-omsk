@@ -60,3 +60,9 @@
 	text-align: center;
 	font-size: 10px;
 }
+
+.pagination {
+    clear: both;
+    text-align: center;
+    padding-top: 15px;
+}

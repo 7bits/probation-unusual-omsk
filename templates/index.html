@@ -8,7 +8,8 @@
 {% block content %}
 
 	<h1>Самые интересные места Омска</h1>
-    <div>{% for place in all_places %}
+    <div>
+    {% for place in all_places %}
 		<div class="place">
 		<a href="/place/{{ place.id }}/">
 			<div class="photo" style="background: url({{ place.image.url }})"></div>
@@ -17,7 +18,8 @@
 		</a>
 		</div>
 	{% endfor %}
-	<br>
+	</div>
+
 	<div class="pagination">
 	    <span class="step-links">
 	        {% if all_places.has_previous %}
@@ -32,6 +34,5 @@
 	            <a href="?{{ search_request }}page={{ all_places.next_page_number }}">Вперед</a>
 	        {% endif %}
 	    </span>
-	</div>
 	</div>
 {% endblock %}
