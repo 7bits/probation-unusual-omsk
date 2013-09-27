@@ -29,8 +29,5 @@ ymaps.ready(init);
                 }));
             }
         },
-        error: function(data) {
-            alert('error')
-        },
     });
 }

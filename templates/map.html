@@ -3,7 +3,8 @@
 {% load staticfiles %}
 
 {% block script %}
-	<link rel="stylesheet" type="text/css" href="{% static "style/map.css" %}" >
+	<link rel="stylesheet" type="text/css" href="{% static "style/map.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "style/yandex_map.css" %}">
 	<script src="//api-maps.yandex.ru/2.0.31/?load=package.standard,package.geoQuery&lang=ru-RU" type="text/javascript"></script>
 	<script src="{% static "js/map.js" %}"></script>
 {% endblock %}
