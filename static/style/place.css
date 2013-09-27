@@ -22,15 +22,7 @@
 	border-radius: 3px;
 	margin-bottom: 10px;
 }
-.place-about{
-	//background-color: rgb(250,235,194);
-	display: table-cell;
-	vertical-align: middle;
-	height: 150px;
-	padding-right: 30px;
-	padding-left: 30px;
-	width: 320px;
-}
+
 
 p.address{
 	margin-bottom: 0px;
