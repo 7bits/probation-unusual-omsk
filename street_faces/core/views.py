@@ -5,7 +5,7 @@ from django.db.models import Q
 from street_faces.core.models import place
 from street_faces.core.forms import add_place_form
 from django.shortcuts import get_object_or_404, redirect, render
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required, permission_required
@@ -54,11 +54,19 @@ def search_place(request):
         'all_places': places,
         'search_request': search_request})
 
-
+from django.utils import simplejson
+from django.core import serializers
 def places_map(request):
     all_places = place.objects.filter(is_visible=True)
-    return render(request, 'map.html', {
-        'all_places': all_places})
+    if request.is_ajax():
+        places_json = serializers.serialize("json", all_places)
+        #places_list = simplejson.loads(places_json)
+        json_data = simplejson.dumps({'all_places': places_json})
+        return HttpResponse(json_data, mimetype="application/javascript")
+    else:
+        return render(request, 'map.html', {
+            'all_places': all_places,
+            })
 
 
 def places_filter(request, filter_id):

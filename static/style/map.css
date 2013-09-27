@@ -35,3 +35,8 @@
 	height: 558px;
 	background-color: rgba(250,235,194,0.64);
 }
+
+.img-map{
+	max-width: 200px;
+	max-height: 200px;
+}
