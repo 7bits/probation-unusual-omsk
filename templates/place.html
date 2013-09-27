@@ -2,74 +2,24 @@
 {% load staticfiles %}
 
 {% block script %}
-	<link rel="stylesheet" type="text/css" href="{% static "style/place.css" %}" >
+	<link rel="stylesheet" type="text/css" href="{% static "style/place.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "style/yandex_map.css" %}">
 	<script src="//api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
-
     <!--
         Основная библиотека JQuery.
         Яндекс предоставляет хостинг JavaScript-библиотек
     -->
-
    <!-- Библиотека JQuery.UI. Используем для работы со вкладками -->
     <script src="//yandex.st/jquery-ui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
-
     <!-- CSS JQuery.UI. Используем для отрисовки вкладок -->
     <link rel="stylesheet" href="//yandex.st/jquery-ui/1.8.15/themes/humanity/jquery.ui.all.min.css" type="text/css"/>
-	</head>
-
-	<script type="text/javascript">
-ymaps.ready(init);
-
-var myMap;
-
-function init () {
-    // Инициализация табов.
-    // После исполнения команды tab-2 получит style='display:none'.
-    // Карта будет инициализированная, но будет иметь нулевой размер.
-    // В данном случае это хорошо, так как невидимая карта не будет загружать невидимые тайлы.
-    $('#tabs').tabs();
-    myMap = new ymaps.Map('tab-2', {
-        center: [{{ place.latitude }}, {{ place.longitude}}],
-	    zoom: 16
-    });
-
-    BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
-	            '<div style="margin: 10px;">' +
-	                '<b>$[properties.name]</b><br />' +
-	                '<img class="img-map" src="$[properties.img]"/><br /> ' +
-	                '<b>$[properties.address]</b>' +
-	            '</div>'
-	        );	
-
-
-    myMap.geoObjects.add(new ymaps.Placemark([{{ place.latitude }}, {{ place.longitude}}], {
-	            name: '{{ place.title }}',
-	            img: '{{ place.image.url }}',
-	        address: '{{ place.address }}'
-	        }, {
-	            balloonContentLayout: BalloonContentLayout
-	        }));
-
-
-    // В момент показа нового таба будем пересчитывать размер карты.
-    // Карта примет максимально возможные значения при активации ее таба,
-    // и нулевые как только будет выбран первый таб.
-    // Требуется слушать именно tabsshow, а не tabsselect, так как требуется
-    // чтобы элемент, где располагается карта, уже был виден.
-    $('#tabs').bind('tabsshow', function (event, ui) {
-        myMap.container.fitToViewport();
-    });
-
-
-}
-
-
-	</script>
 {% endblock %}
 
-{% block content %}
-<!-- Put this div tag to the place, where the Like block will be -->
 
+{% block content %}
+<script src="{% static "js/one_place_map.js" %}"></script>
+
+<!-- Put this div tag to the place, where the Like block will be -->
 <div id="vk_like"></div>
 <script type="text/javascript">
 VK.Widgets.Like("vk_like", {type: "full"});

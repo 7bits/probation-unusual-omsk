@@ -10,6 +10,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required, permission_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.utils import simplejson
+from django.core import serializers
 
 
 def paginator_place(place_list, page, number_of_places):
@@ -33,8 +35,13 @@ def index(request):
 
 def place_one(request, place_id):
     one_place = get_object_or_404(place, id=place_id, is_visible=True)
-    return render(request, 'place.html', {
-        'place': one_place})
+    if request.is_ajax():
+        place_json = serializers.serialize("json", [one_place])
+        json_data = simplejson.dumps({'place': place_json})
+        return HttpResponse(json_data, mimetype="application/javascript")
+    else:
+        return render(request, 'place.html', {
+            'place': one_place})
 
 
 def search_place(request):
@@ -54,13 +61,11 @@ def search_place(request):
         'all_places': places,
         'search_request': search_request})
 
-from django.utils import simplejson
-from django.core import serializers
+
 def places_map(request):
     all_places = place.objects.filter(is_visible=True)
     if request.is_ajax():
         places_json = serializers.serialize("json", all_places)
-        #places_list = simplejson.loads(places_json)
         json_data = simplejson.dumps({'all_places': places_json})
         return HttpResponse(json_data, mimetype="application/javascript")
     else:
