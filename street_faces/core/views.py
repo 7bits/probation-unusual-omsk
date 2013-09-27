@@ -109,8 +109,13 @@ def add_place(request):
 def moderation_list(request):
     if request.user.has_perm('core.can_moderate'):
         all_places = place.objects.all()
-        return render(request, 'moderation.html', {
-            'all_places': all_places})
+        if request.is_ajax():
+            places_json = serializers.serialize("json", all_places)
+            json_data = simplejson.dumps({'all_places': places_json})
+            return HttpResponse(json_data, mimetype="application/javascript")
+        else:
+            return render(request, 'moderation.html', {
+                'all_places': all_places})
     else:
         raise Http404  # добавить ошибку
 

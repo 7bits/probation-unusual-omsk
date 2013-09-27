@@ -1,0 +1,32 @@
+#content{
+	width: 80%;
+}
+
+.place-wrapper{
+	height: 380px;
+	padding: 10px;
+	background-color: rgb(255,255,255);
+	box-shadow: 1px 4px 15px -4px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+
+.place-img{
+	float: left;
+	height: 360px;
+	width: 350px;
+	background-size: cover !important;
+}
+
+.place-about{
+	display: block;
+	height: 360px;
+	width: 320px;
+	float: left;
+}
+
+.place-map{
+	height: 360px;
+	width: 335px;
+	float: left;
+}
