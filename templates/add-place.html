@@ -1,12 +1,20 @@
 {% extends "main.html" %}
 {% load staticfiles %}
 
+{% block script %}
+    <link rel="stylesheet" type="text/css" href="{% static "style/add-place.css" %}" >
+{% endblock %}
 
 {% block content %}
-
-	<form enctype="multipart/form-data" action="/add-place/" method="POST">{% csrf_token %}
-   		{{ add_place_form.as_p }}
-		<input type="submit" value="добавить"/>	
-	</form>
-
+    {% if messages %}
+        {% for message in messages %}
+            <H1{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                {{ message }}
+            </H1>
+        {% endfor %}
+    {% endif %}
+    <form enctype="multipart/form-data" action="/add-place/" method="POST">{% csrf_token %}
+        {{ add_place_form.as_p }}
+        <input type="submit" value="добавить"/> 
+    </form>
 {% endblock %}

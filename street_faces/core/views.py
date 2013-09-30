@@ -91,16 +91,16 @@ def places_filter_map(request, filter_id):
     return render(request, 'map.html', {
         'all_places': all_places})
 
-
+from django.contrib import messages
 @csrf_exempt
 def add_place(request):
     if request.method == 'POST':
         form = add_place_form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            #добавить сообщение
+            messages.success(request, 'Место успешно добавлено')
         else:
-            raise Http404  # добавить ошибку
+            messages.error(request, 'Не все поля заполнены верно')
     return render(request, 'add-place.html', {
         'add_place_form': add_place_form})
 
