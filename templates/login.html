@@ -3,7 +3,7 @@
 {% block content %}
 
 	{% if form.errors %}
-	<p>Ваше имя пользователя и пароль не совпадают. Пожалуйста, попробуйте еще раз.</p>
+	<p class="error-login">Ваше имя пользователя и пароль не совпадают. Пожалуйста, попробуйте еще раз.</p>
 	{% endif %}
 
 	<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
@@ -19,7 +19,7 @@
 	</tr>
 	</table>
 
-	<input type="submit" value="login" />
+	<input type="submit" name="login" value="login" />
 	<input type="hidden" name="next" value="{{ next }}" />
 	</form>
 
