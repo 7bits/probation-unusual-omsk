@@ -15,3 +15,5 @@ echo "Install python-dev"
 apt-get install python-dev
 echo "Install PIL"
 pip install PIL
+echo "Install Selenium"
+pip install selenium

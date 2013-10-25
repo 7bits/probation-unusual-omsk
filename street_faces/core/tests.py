@@ -6,7 +6,6 @@ when you run "manage.py test".
 Replace this with more appropriate tests for your application.
 """
 
-from django.test import TestCase
 from django.test import LiveServerTestCase
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.common.by import By
@@ -24,18 +23,18 @@ def input_login(self, user_name, user_pass):
     self.selenium.find_element_by_name("login").click()
 
 
-class login_test(LiveServerTestCase):
+class LoginTest(LiveServerTestCase):
     fixtures = ['user-data.json']
 
     @classmethod
     def setUpClass(cls):
         cls.selenium = WebDriver()
-        super(login_test, cls).setUpClass()
+        super(LoginTest, cls).setUpClass()
 
     @classmethod
     def tearDownClass(cls):
         cls.selenium.quit()
-        super(login_test, cls).tearDownClass()
+        super(LoginTest, cls).tearDownClass()
 
     def test_login_ok(self):
         user_name = "test2"
