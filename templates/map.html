@@ -9,6 +9,14 @@
 	<script src="{% static "js/map.js" %}"></script>
 {% endblock %}
 
+{% block links %}
+	<a href="/map/filter/architecture/">Архитектура</a>
+	<a href="/map/filter/graffiti/">Граффити</a>
+	<a href="/map/filter/monuments/">Памятники</a>
+	<a href="/map/filter/fountains/">Фонтаны</a>
+{% endblock %}
+
+
 {% block content %}
 	<div class="sidebar">
 		{% for place in all_places %}
