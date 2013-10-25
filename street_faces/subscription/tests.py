@@ -13,18 +13,18 @@ def input_subscription (self, user_email):
         alert.accept()
         return alert_text
     
-class FestSubsription(LiveServerTestCase):
+class FestSubscription(LiveServerTestCase):
     fixtures = ['user-data.json']
 
     @classmethod
     def setUpClass(cls):
         cls.selenium = WebDriver()
-        super(FestSubsription, cls).setUpClass()
+        super(FestSubscription, cls).setUpClass()
 
     @classmethod
     def tearDownClass(cls):
         cls.selenium.quit()
-        super(FestSubsription, cls).tearDownClass()
+        super(FestSubscription, cls).tearDownClass()
 
     def test_subscription_ok(self):
         user_email = "test2@mail.ru"
