@@ -3,6 +3,8 @@
 
 {% block script %}
     <link rel="stylesheet" type="text/css" href="{% static "style/add-place.css" %}" >
+    <script src="//api-maps.yandex.ru/2.0.31/?load=package.standard,package.geoQuery&lang=ru-RU" type="text/javascript"></script>
+    <script src="{% static "js/add-place-map.js" %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -17,4 +19,5 @@
         {{ add_place_form.as_p }}
         <input type="submit" value="добавить"/> 
     </form>
+    <div id="map" style="width:400px; height:300px"></div>
 {% endblock %}
