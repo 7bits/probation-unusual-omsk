@@ -74,8 +74,6 @@ def places_map(request):
 
 
 def places_filter(request, filter_id):
-    #if request.META['HTTP_REFERER'].find('/map/') != -1:
-    #    return redirect('/map/filter/' + filter_id)
     all_places = Place.objects.filter(category__category_url=filter_id,
                                       is_visible=True)
     page = request.GET.get('page')
