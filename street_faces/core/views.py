@@ -70,15 +70,13 @@ def places_map(request):
         json_data = json.dumps({'all_places': places_json})
         return HttpResponse(json_data, mimetype="application/javascript")
     else:
-        return render(request, 'map.html', {
-            'all_places': all_places,
-            })
+        return render(request, 'map.html', dict(all_places=all_places))
 
 
 def places_filter(request, filter_id):
     if request.META['HTTP_REFERER'].find('/map/') != -1:
         return redirect('/map/filter/' + filter_id)
-    all_places = Place.objects.filter(category__category=filter_id,
+    all_places = Place.objects.filter(category__category_url=filter_id,
                                       is_visible=True)
     page = request.GET.get('page')
     places = paginator_place(all_places, page, 12)

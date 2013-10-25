@@ -3,10 +3,11 @@ from django.db import models
 
 
 class PlaceCategory(models.Model):
-    category = models.CharField(max_length=128, verbose_name=u"Категория")
+    category_name = models.CharField(max_length=128, verbose_name=u"Категория")
+    category_url = models.CharField(max_length=128, verbose_name=u"URL категории")
 
     def __unicode__(self):
-        return unicode(self.category)
+        return unicode(self.category_name)
 
 
 class Place(models.Model):
